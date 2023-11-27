@@ -1,5 +1,6 @@
 import random
 
+# Pega a escolha do usuário e armazena
 def get_user_choice():
     print("Escolha: \n1 - Pedra \n2 - Papel \n3 - Tesoura")
     choice = input("O que tu quer: ")
@@ -8,10 +9,12 @@ def get_user_choice():
         choice = input("O que tu quer: ")
     return choice
 
+# Pega a escolha da máquina e armazena
 def get_computer_choice():
     choices = ['Pedra', 'Papel', 'Tesoura']
     return random.choice(choices)
 
+#Verifica o que foi escolhido e se venceu-empatou-perdeu
 def get_result(user_choice, computer_choice):
     user_choice = get_choice_name(user_choice)
     print("Você jogou: " + user_choice)
@@ -33,12 +36,14 @@ def get_choice_name(choice):
     }
     return choices[choice]
 
+#Joga o jogo
 def play_game():
     user_choice = get_user_choice()
     computer_choice = get_computer_choice()
     result = get_result(user_choice, computer_choice)
     print(result)
 
+#Script para repetição
 while True:
     play_game()
     next_game = input("Mais um? (s/n): ")
